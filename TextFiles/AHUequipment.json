@@ -1,0 +1,9 @@
+{
+	"Equip" : "Select Equipment",
+	"supAirTemp" : "Supply Air Temperature",
+	"rtnAirTemp" : "Return Air Temperature",
+	"fanStartStop" : "Fan Start/Stop",
+	"fanStatus" : "Fan Status",
+	"chdWtrVlvActCmd" : "Chilled Water Valve Actuator Command",
+	"chdWtrVlvActFbk" : "Chilled Water Valve Actuator Feedback"
+}

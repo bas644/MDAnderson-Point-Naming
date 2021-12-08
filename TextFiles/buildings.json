@@ -1,0 +1,14 @@
+{
+	"Bldg" : "Select a building",
+	"CP" : "Central Utility Plant Building",
+	"OAM" : "Office Administraion and Maintenance Building",
+	"PPB" : "Physical Plant Building",	
+	"PTC" : "Proton Therapy Center",
+	"2PTC" : "Proton Therapy Center 2",
+	"SC" : "South Campus Research Building",
+	"2SC" : "South Campus Research Building 2",
+	"3SC" : "South Campus Research Building 3",
+	"4SC" : "South Campus Research Building 4",
+	"5SC" : "South Campus Research Building 5",
+	"SR" : "Smith Research Building"
+}

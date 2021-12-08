@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Point Names</title>
+	<meta name="description" content="University Of Texas MD Anderson BAS Point Naming Standard">
+	<meta charset="utf-8">
+	<meta name="robots" content="index,follow">
+	<link rel="icon" href="./P2X19H.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<form action="#">		
+		<!-- PROTOCOL -->
+		<label  for="prot">Protocol</label>
+		<select name="protocol" id="prot" onchange="protUpdate()"></select>
+		<!-- BUILDING -->
+		<label for="build">Building</label>
+		<select name="building" id="build" onchange="buildUpdate()"></select>
+		<!-- FLOOR -->
+		<label for="flr">Floor</label>
+		<select name="floor" id="flr" onchange="flrUpdate()"></select>
+		<!-- ROOM -->
+		<label for="rm">Input Room #</label>
+		<input type="text" name="room" id="rm" maxlength="6" autocomplete="off" onblur="rmUpdate()" onkeyup="rmKey(this)">
+		<!-- SYSTEM -->
+		<label for="sys">Building System</label>
+		<select name="system" id="sys" onchange="sysUpdate()"></select>
+		<!-- SYSTEM ID -->
+		<label for="sysId" id="sysIdLbl">Input Air Handling Unit #</label>
+		<input type="text" name="systemId" id="sysId" maxlength="6" autocomplete="off" onblur="sysIdUpdate()" onkeyup="sysKey(this)">
+		<!-- EQUIPMENT -->
+		<label for="equip" id="equipLbl">Select Equipment</label>
+		<select name="equipment" id="equip" onchange="sysEqUpdate()"></select>
+	</form>	
+	<h2>Point Names</h2>
+		<p id="pnt"></p>	
+	<script src="index.js"></script>
+</body>
+</html>

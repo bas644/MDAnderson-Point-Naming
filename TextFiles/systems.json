@@ -1,0 +1,7 @@
+{
+	"Sys" : "Select a System",
+	"AHU" : "Air Handling Unit",
+	"CHW" : "Chilled Water",
+	"CW" : "Condenser Water",
+	"HW" : "Heating Hot Water"
+}
