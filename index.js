@@ -7,6 +7,7 @@ document.getElementById('equipLbl').style.display = 'none';
 document.getElementById('equip').style.display = 'none';
 
 let dynamicPoint = ['Bld', 'Flr', ' ', 'Rm', ' ', 'Sys', '', ' ', 'EqupPoints']
+let builtPoints = []
 
 // Set "Protocol" drop down menu items
 const loadProt = async function() {
@@ -140,8 +141,8 @@ function sysEqUpdate(){
 // Set "Equipment" drop down menu items
 const loadSysEq = async function(file) {
 	try {
-		document.getElementById('equipLbl').style.display = 'block';
-		document.getElementById('equip').style.display = 'block';
+		document.getElementById('equipLbl').style.display = 'inline';
+		document.getElementById('equip').style.display = 'inline';
 		let sysEqProms = await fetch(file)
 		let equipArray = await sysEqProms.json();
 		let equipInfo = document.getElementById('equip');
@@ -156,8 +157,8 @@ function sysUpdate(){
 	dynamicPoint[5] = update('sys');
 		//Building System == 'AHU'
 	if (dynamicPoint[5] == 'AHU') {
-		document.getElementById('sysIdLbl').style.display = 'block';
-		document.getElementById('sysId').style.display = 'block';
+		document.getElementById('sysIdLbl').style.display = 'inline';
+		document.getElementById('sysId').style.display = 'inline';
 		loadSysEq('./TextFiles/AHUequipment.json')
 	} else {
 		dynamicPoint[6] = '';
@@ -166,14 +167,67 @@ function sysUpdate(){
 	}
 		//Building System == 'CHW'
 	if (dynamicPoint[5] == 'CHW') {
-		loadSysEq('./TextFiles/CHWequipment.json')
+		loadSysEq('./TextFiles/CHWequipment.json');
 	}
 		//Building System == 'CW'
 	if (dynamicPoint[5] == 'CW') {
-		loadSysEq('./TextFiles/CWequipment.json')
+		loadSysEq('./TextFiles/CWequipment.json');
 	}
 		//Building System == 'HW'
 	if (dynamicPoint[5] == 'HW') {
-		loadSysEq('./TextFiles/HWequipment.json')
+		loadSysEq('./TextFiles/HWequipment.json');
 	}	
 }
+
+// Display all of the built points
+function pntDisplay() {
+	document.getElementById("builtPointsList").innerHTML = "";
+	for(point in builtPoints) {
+		let ul = document.getElementById("builtPointsList");
+		let li = document.createElement("li");
+		let a = document.createElement("a");
+		a.target = "blank";
+		a.innerText = builtPoints[point];
+		let ref = "/pntEdit.html?pntPassed=" + a.innerText
+		a.href = ref;
+		li.appendChild(a);
+		ul.appendChild(li);
+	}
+}
+// Change the background color of the labels and button when cliked
+// dynamicPoint = ['Bld', 'Flr', ' ', 'Rm', ' ', 'Sys', '', ' ', 'EqupPoints']
+function dynamicColors() {
+	if  (dynamicPoint[2] == ' '){
+		return['red', 0];
+	}else if  (dynamicPoint[0] == 'Bld') {
+		return['red', 1];
+	}else if  (dynamicPoint[1] == 'Flr'){
+		return['red', 2];
+	}else if (dynamicPoint[3] == 'Rm'){
+		return['red', 3];
+	} else if (dynamicPoint[3] == ''){
+		return['red', 3];
+	} else if (dynamicPoint[5] == 'Sys'){
+		return['red', 4];		
+	} else if (dynamicPoint[8] == 'EqupPoints'){
+		return['red', 5];
+	} else {
+		if(builtPoints.includes(document.getElementById("pnt").innerHTML) == false) {
+			builtPoints.push(document.getElementById("pnt").innerHTML);
+		}
+		pntDisplay();		
+		return['green', 0];
+	}	
+}
+
+// Added function to keep button from momentarily changing to red before changing to correct color
+function buttonClick(){
+	const lblIds = ['protLbl', 'buildLbl', 'flrLbl', 'rmLbl', 'sysLbl', 'equipLbl'];
+	let clrChng = dynamicColors();
+	document.getElementById('add').className = clrChng[0];
+	for(lbl in lblIds) {
+		document.getElementById(lblIds[lbl]).className = '';
+	}
+	document.getElementById(lblIds[clrChng[1]]).className = clrChng[0];	
+}
+

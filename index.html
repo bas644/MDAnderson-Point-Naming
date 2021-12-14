@@ -4,36 +4,44 @@
 	<title>Point Names</title>
 	<meta name="description" content="University Of Texas MD Anderson BAS Point Naming Standard">
 	<meta charset="utf-8">
-	<meta name="robots" content="index,follow">
-	<link rel="icon" href="./P2X19H.ico">
+	<meta name="robots" content="index,follow">	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="./P2X19H.ico">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-	<form action="#">		
-		<!-- PROTOCOL -->
-		<label  for="prot">Protocol</label>
-		<select name="protocol" id="prot" onchange="protUpdate()"></select>
-		<!-- BUILDING -->
-		<label for="build">Building</label>
-		<select name="building" id="build" onchange="buildUpdate()"></select>
-		<!-- FLOOR -->
-		<label for="flr">Floor</label>
-		<select name="floor" id="flr" onchange="flrUpdate()"></select>
-		<!-- ROOM -->
-		<label for="rm">Input Room #</label>
-		<input type="text" name="room" id="rm" maxlength="6" autocomplete="off" onblur="rmUpdate()" onkeyup="rmKey(this)">
-		<!-- SYSTEM -->
-		<label for="sys">Building System</label>
-		<select name="system" id="sys" onchange="sysUpdate()"></select>
-		<!-- SYSTEM ID -->
-		<label for="sysId" id="sysIdLbl">Input Air Handling Unit #</label>
-		<input type="text" name="systemId" id="sysId" maxlength="6" autocomplete="off" onblur="sysIdUpdate()" onkeyup="sysKey(this)">
-		<!-- EQUIPMENT -->
-		<label for="equip" id="equipLbl">Select Equipment</label>
-		<select name="equipment" id="equip" onchange="sysEqUpdate()"></select>
-	</form>	
-	<h2>Point Names</h2>
-		<p id="pnt"></p>	
+	<section>
+		<form action="#" class="selector">
+			<ul>
+				<!-- PROTOCOL -->
+				<li><label id="protLbl" for="prot" class="">Protocol</label><select name="protocol" id="prot" onchange="protUpdate()"></select></li>
+				<!-- BUILDING -->			
+				<li><label id="buildLbl" for="build" class="">Building</label><select name="building" id="build" onchange="buildUpdate()"></select></li>
+				<!-- FLOOR -->			
+				<li><label id="flrLbl" for="flr" class="">Floor</label><select name="floor" id="flr" onchange="flrUpdate()"></select></li>
+				<!-- ROOM -->			
+				<li><label id="rmLbl" for="rm" class="">Input Room #</label><input type="text" name="room" id="rm" maxlength="6" autocomplete="off" onblur="rmUpdate()" onkeyup="rmKey(this)"></li>
+				<!-- SYSTEM -->			
+				<li><label id="sysLbl" for="sys" class="">Building System</label><select name="system" id="sys" onchange="sysUpdate()"></select></li>
+				<!-- SYSTEM ID -->			
+				<li><label for="sysId" id="sysIdLbl">Input Air Handling Unit #</label><input type="text" name="systemId" id="sysId" maxlength="6" autocomplete="off" onblur="sysIdUpdate()" onkeyup="sysKey(this)"></li>
+				<!-- EQUIPMENT -->			
+				<li><label for="equip" class="" id="equipLbl">Select Equipment</label><select name="equipment" id="equip" onchange="sysEqUpdate()"></select></li>
+			</ul>
+		</form>	
+		<form action="#" class="example">
+			<h2>Point Name</h2>
+				<p id="pnt"></p>
+			<button type="button" id="add" onclick="buttonClick()">Add Point</button>
+		</form>
+	</section>
+	<aside>
+		<form action="#" class="built">
+			<!-- Shopping Cart Style Sidebar -->
+			<h2>POINTS</h2>
+				<ul id="builtPointsList"></ul>
+		</form>
+	</aside>
 	<script src="index.js"></script>
 </body>
 </html>
