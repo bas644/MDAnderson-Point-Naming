@@ -188,7 +188,7 @@ function pntDisplay() {
 		let a = document.createElement("a");
 		a.target = "blank";
 		a.innerText = builtPoints[point];
-		let ref = "/pntEdit.html?pntPassed=" + a.innerText
+		let ref = "#" + a.innerText
 		a.href = ref;
 		li.appendChild(a);
 		ul.appendChild(li);
