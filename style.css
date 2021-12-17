@@ -106,6 +106,12 @@ aside {
 	margin: .15rem;	
 	padding: 0rem 1rem;
 	font-size: 1.3rem;	
-	list-style: none;
+	list-style: none;	
 	display: flex;
 	justify-content: center;
+}
+
+.built a {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
