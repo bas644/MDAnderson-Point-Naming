@@ -185,8 +185,7 @@ function pntDisplay() {
 	for(point in builtPoints) {
 		let ul = document.getElementById("builtPointsList");
 		let li = document.createElement("li");
-		let a = document.createElement("a");
-		a.target = "blank";
+		let a = document.createElement("a");		
 		a.innerText = builtPoints[point];
 		let ref = "#" + a.innerText
 		a.href = ref;

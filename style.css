@@ -9,22 +9,29 @@ html{
 	font-size: 62.5%;	
 }
 
-section {
-	float: left;
-	margin: 0 1.5%;
-	width: 74%;	
+body {
+	background: url("blueBackground.png") no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
 }
 
-.selector {	
-	background-image: linear-gradient(to bottom right, rgb(228, 247, 220), rgb(176, 212, 179));
-	width: 100%;
+.sel {
+	float: left;
+	margin: 5% 1%;
+	width: 74%;
+	min-width: max-content;
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+	border-radius: 1.5rem;
+	background-color: rgba(50, 50, 255, .3);
+	backdrop-filter: blur(.7rem);
 }
+
 .selector li {
 	margin: 2rem;	
 	padding: 0.4rem;
 	font-size: 2rem;	
 	list-style: none;
-
 }
 .selector label {
 	background: rgb(153, 189, 247);	
@@ -76,22 +83,29 @@ button.green:focus {
 
 aside {
 	float: right;
-	margin: 0 1.5%
+	margin: 5% 1%;
 	width: 20%;
+	min-width: max-content;
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+	border-radius: 1.5rem;
+	background-color: rgba(50, 50, 255, .3);
+	backdrop-filter: blur(.7rem);
 }
 
-.built {
+/*.built {
 	background-image: linear-gradient(to bottom right, rgb(228, 247, 220), rgb(176, 212, 179));
 	width: 100%;
-}
+}*/
 
-.built h2 {
-	margin: 2rem;
-	padding: 1rem 10rem;
+.built h2{
+	display: flex;
+	justify-content: center;
 }
 
 .built li {
 	margin: .15rem;	
-	padding: 0rem 5rem;
+	padding: 0rem 1rem;
 	font-size: 1.3rem;	
 	list-style: none;
+	display: flex;
+	justify-content: center;

@@ -10,8 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-	<!-- Main selection section -->
+	<!-- Main selection section -->	
 	<section>
+		<div class="sel">
 		<form action="#" class="selector">
 			<ul>
 				<!-- PROTOCOL -->
@@ -30,11 +31,13 @@
 				<li><label for="equip" class="" id="equipLbl">Select Equipment</label><select name="equipment" id="equip" onchange="sysEqUpdate()"></select></li>
 			</ul>
 		</form>	
+		
 		<form action="#" class="example">
 			<h2>Point Name</h2>
 				<p id="pnt"></p>
 			<button type="button" id="add" onclick="buttonClick()">Add Point</button>
 		</form>
+		</div>
 	</section>
 
 	<!-- Shopping cart preview of built points -->
@@ -43,13 +46,14 @@
 			<!-- Shopping Cart Style Sidebar -->
 			<h2>POINTS</h2>
 				<ul id="builtPointsList"></ul>
-		</form>
-	</aside>
+		</form>	
 
 	<!-- Slide out frosted glass Edit Menu -->
 	<div>
 		<h1>Edit This Point</h1>
 	</div>
+
+	</aside>
 	<script src="index.js"></script>
 </body>
 </html>
