@@ -115,3 +115,7 @@ aside {
 	color: rgb(0, 0, 0);
 	text-decoration: none;
 }
+/*
+aside div {
+	visibility: hidden;
+}*/
