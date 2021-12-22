@@ -9,6 +9,9 @@ document.getElementById('equip').style.display = 'none';
 let dynamicPoint = ['Bld', 'Flr', ' ', 'Rm', ' ', 'Sys', '', ' ', 'EqupPoints']
 let builtPoints = []
 
+const modal = document.querySelector(".modal");
+const editMenu = document.querySelector(".editMenu");
+
 // Set "Protocol" drop down menu items
 const loadProt = async function() {
 	try {
@@ -179,6 +182,11 @@ function sysUpdate(){
 	}	
 }
 
+// Edit the point selected
+function editPoint(point) {
+	document.getElementById("editPnt").innerHTML = point;
+}
+
 // Display all of the built points
 function pntDisplay() {
 	document.getElementById("builtPointsList").innerHTML = "";
@@ -187,8 +195,13 @@ function pntDisplay() {
 		let li = document.createElement("li");
 		let a = document.createElement("a");		
 		a.innerText = builtPoints[point];
-		let ref = "#" + a.innerText
+		let ref = "#";
 		a.href = ref;
+		a.addEventListener("click", () => {
+			modal.classList.add("open");
+			editMenu.classList.add("open");
+			editPoint(a.innerText);
+		});
 		li.appendChild(a);
 		ul.appendChild(li);
 	}
@@ -230,3 +243,17 @@ function buttonClick(){
 	document.getElementById(lblIds[clrChng[1]]).className = clrChng[0];	
 }
 
+function editCancel(){
+	modal.classList.remove("open");
+	editMenu.classList.remove("open");
+}
+
+function editDelete() {
+	let pntDel = document.getElementById("editPnt").innerHTML;
+	dPntIndx = builtPoints.indexOf(pntDel);
+	if (dPntIndx > -1) {
+		builtPoints.splice(dPntIndx, 1);
+	}
+	pntDisplay();
+	editCancel();
+}

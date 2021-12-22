@@ -1,0 +1,12 @@
+{
+	"Sys" : "Select a System",
+	"AH" : "Air Handling Unit",
+	"DX" : "DX Unit",
+	"CHW" : "Chilled Water",
+	"CW" : "Condenser Water",
+	"HW" : "Heating Hot Water",
+	"HX" : "Heating Exchanger",
+	"AU" : "Acid Feed Unit",
+	"AT" : "Air Compressor Pressure Tanks",
+	"AC" : "Air Conditioner Unit"
+}

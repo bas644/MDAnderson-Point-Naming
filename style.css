@@ -51,7 +51,7 @@ body {
 
 .selector select {
 	margin: 0.5rem;
-	width: 15rem;
+	width: max-content	
 }
 
 .selector input {
@@ -89,6 +89,7 @@ button {
 	width: 7rem;
 	border-radius: 50%;
 	background-image: radial-gradient(rgba(153, 189, 247,0), rgba(153, 189, 247,1));
+	cursor: pointer;
 	}
 
 button.red:focus {
@@ -135,7 +136,50 @@ aside {
 	color: rgb(0, 0, 0);
 	text-decoration: none;
 }
-/*
-aside div {
-	visibility: hidden;
-}*/
+
+.modal {
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s ease-out;
+}
+
+.modal.open {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.editMenu {
+	position: absolute;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	min-width: max-content;
+	transform: translate(-50%, -50%) scale(0.5);
+	transition: all 0.3s ease-out;
+}
+
+.editMenu {	
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.editMenu p {
+	color: white;
+	background: rgba(255, 0, 0, 0.5);
+	font-size: 3rem;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+	transition: all 0.3s ease-out;
+}
+
+.editMenu button {
+	position: relative;
+	top: 15%;
+}
